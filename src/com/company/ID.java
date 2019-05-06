@@ -6,15 +6,17 @@ public class ID {
         private String middle_initial;
         private String last_name;
         private String email_address;
+        private int phone_number;
 
     public ID() {
     }
 
-    public ID(String name, String middle_initial, String last_name, String email_address) {
+    public ID(String name, String middle_initial, String last_name, String email_address, int phone_number) {
         this.name = name;
         this.middle_initial = middle_initial;
         this.last_name = last_name;
         this.email_address = email_address;
+        this.phone_number = phone_number;
     }
 
 
@@ -52,9 +54,12 @@ public class ID {
             this.email_address = email_address;
         }
 
+        public int getPhone_number() { return phone_number;}
+        public void setPhone_number(int phone_number) {this.phone_number = phone_number;}
+
 
         public void getDescription(){
-            System.out.println(name + middle_initial  + last_name + "\r\n" + email_address);
+            System.out.println(name + middle_initial  + last_name + "\r\n" + email_address + "\r\n" + phone_number);
         }
 
     }

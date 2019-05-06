@@ -11,100 +11,115 @@ public class Main {
         resume1 applicant = new resume1();
         Scanner input = new Scanner(System.in);
 
+        System.out.println("\n==============================================================");
+            System.out.print("Enter your first name, middle initial, last name below : ");
+            String name = input.next();
+            String middle_initial = input.next();
+            String last_name = input.next();
+            input.nextLine();
+            System.out.println("Enter your email address");
+            String email_address = input.next();
+            System.out.println("Enter your phone number");
+            int phone_number = input.nextInt();
+            ID id = new ID(name, middle_initial, last_name, email_address, phone_number);
+            applicant.setIdArr(id);
 
-        System.out.print("Enter your first name, middle initial, last name : ");
-        String name = input.next();
-        String middle_initial = input.next();
-        String last_name = input.next();
-        input.nextLine();
-        System.out.println("Enter your email address");
-        String email_address = input.nextLine();
-        ID id = new ID(name, middle_initial, last_name, email_address);
-        applicant.setIdArr(id);
+            String start = "y";
 
-        String start = "y";
-        while (start.equalsIgnoreCase("y")) {
-            String yn = "y";
-            System.out.println("== Education ==");
-            while (yn.equalsIgnoreCase("y")) {
 
-                System.out.println("Enter Degree Type :");
-                String degree = input.nextLine();
-                System.out.println("Enter Major :");
-                String major = input.nextLine();
-                System.out.println("Enter University name :");
-                String university = input.nextLine();
-                System.out.println("Enter graduation Year :");
-                String graduation = input.nextLine();
-                Education edu = new Education(degree, major, university, graduation);
-                applicant.setEduArr(edu);
-                System.out.println("would you like to add another education section?");
-                yn = input.nextLine();
+
+            while (start.equalsIgnoreCase("y"))
+
+            {
+                String yn = "y";
+                System.out.println("== Education ==");
+                input.nextLine();
+                while (yn.equalsIgnoreCase("y")) {
+
+                    System.out.println("Enter Degree Type :");
+                    String degree = input.nextLine();
+                    System.out.println("Enter Major :");
+                    String major = input.nextLine();
+                    System.out.println("Enter University name :");
+                    String university = input.nextLine();
+                    System.out.println("Enter graduation Year :");
+                    String graduation = input.nextLine();
+                    Education edu = new Education(degree, major, university, graduation);
+                    applicant.setEduArr(edu);
+                    System.out.println("would you like to add another education section?");
+                    yn = input.nextLine();
+
+                }
+
+                yn = "y";
+
+                System.out.println("==Experience==");
+                while (yn.equalsIgnoreCase("y")) {
+
+                    System.out.println("Enter company : ");
+                    String company = input.nextLine();
+                    System.out.println("enter Job title :");
+                    String title = input.nextLine();
+                    System.out.println("Enter Start Date :");
+                    String sDate = input.nextLine();
+                    System.out.println("Enter End Date :");
+                    String eDate = input.nextLine();
+                    System.out.println("Enter description :");
+                    String description = input.nextLine();
+                    System.out.println("would you like to more experience?");
+                    yn = input.nextLine();
+                    Experience exp = new Experience(company, title, sDate, eDate, description);
+                    applicant.setExpArr(exp);
+
+                }
+
+                yn = "y";
+                System.out.println("== Skills ==");
+                while (yn.equalsIgnoreCase("y")) {
+                    System.out.println("Enter skills name : ");
+
+                    String skills = input.nextLine();
+                    System.out.println("Enter competency proficiency rating\n" +
+                            "( Fundamental, Novice,  Intermediate, Advanced,  Expert) : ");
+                    String proficiency = input.nextLine();
+
+                    Skills ski = new Skills(skills, proficiency);
+                    applicant.setSkillsArr(ski);
+                    System.out.println("Do you want to add more skills? (y/n)");
+                    yn = input.nextLine();
+                }
+                applicantMap.put(name, applicant);
+
+                System.out.println("\n==========================================================");
+                applicant.getIDArr(0).getDescription();
+                System.out.println("== Education ==");
+                for (int i = 0; i < applicant.eduArr.size(); i++) {
+                    applicant.getEduArr(i).getDescription();
+
+                }
+                System.out.println(("== Experience =="));
+
+                for (int i = 0; i < applicant.expArr.size(); i++) {
+                    applicant.getExpArr(i).getDescription();
+                }
+
+                System.out.println(("== Skills =="));
+                applicant.getSkillsArr(4).getDescription();
+                for (int i = 0; i < applicant.skillsArr.size(); i++) {
+                    if ( i<=0 ){
+                        applicant.getSkillsArr(0).getDescription();
+                        break;
+
+
+                    }
+
+                }
 
             }
-
-            yn = "y";
-
-            System.out.println("==Experience==");
-            while (yn.equalsIgnoreCase("y")) {
-
-                System.out.println("Enter company : ");
-                String company = input.nextLine();
-                System.out.println("enter Job title :");
-                String title = input.nextLine();
-                System.out.println("Enter Start Date :");
-                String sDate = input.nextLine();
-                System.out.println("Enter End Date :");
-                String eDate = input.nextLine();
-                System.out.println("Enter description :");
-                String description = input.nextLine();
-                System.out.println("would you like to more experience?");
-                yn = input.nextLine();
-                Experience exp = new Experience(company, title, sDate, eDate, description);
-                applicant.setExpArr(exp);
-
-            }
-
-            yn = "y";
-            System.out.println("== Skills ==");
-            while (yn.equalsIgnoreCase("y")) {
-                System.out.println("Enter skills name : ");
-
-                String skills = input.nextLine();
-                System.out.println("Enter competency proficiency rating\n" +
-                        "( Fundamental, Novice,  Intermediate, Advanced,  Expert) : ");
-                String proficiency = input.nextLine();
-
-                Skills ski = new Skills(skills, proficiency);
-                applicant.setSkillsArr(ski);
-                System.out.println("Do you want to add more skills? (y/n)");
-                yn = input.nextLine();
-            }
-            applicantMap.put(name, applicant);
-
-            System.out.println("\n============================================");
-            applicant.getIDArr(0).getDescription();
-            System.out.println("== Education ==");
-            for (int i = 0; i < applicant.eduArr.size(); i++) {
-                applicant.getEduArr(i).getDescription();
-
-            }
-            System.out.println(("== Experience =="));
-            ;
-            for (int i = 0; i < applicant.expArr.size(); i++) {
-               applicant.getExpArr(i).getDescription();
-            }
-
-            System.out.println("== Skills ==");
-            for (int i = 0; i < applicant.skillsArr.size(); i++) {
-
-                applicant.getSkillsArr(i).getDescription();
-
-            }
-          }
 
         }
     }
+
 //        Scanner scanner = new Scanner (System.in);
 ////
 ////        ArrayList<String> ID = new ArrayList <String>();
