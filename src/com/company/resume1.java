@@ -20,7 +20,7 @@ public class resume1 {
 
     }
 
-    public ID getidArr(int i) {
+    public ID getIDArr(int i) {
         return idArr.get(i);
     }
 

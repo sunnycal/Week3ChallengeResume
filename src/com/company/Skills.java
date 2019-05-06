@@ -8,6 +8,15 @@ public class Skills {
     public Skills() {
     }
 
+
+    public Skills(String skill_name, String competency) {
+        this.skill_name = skill_name;
+        this.competency = competency;
+    }
+
+
+
+
     public String getSkill_name() {
         return skill_name;
     }
@@ -24,8 +33,8 @@ public class Skills {
         this.competency = competency;
     }
 
-    public String getDescription(){
-        return "Skills \r\n" + skill_name + "," + competency + "\r\n" + skill_name + "," + competency + "\r\n" + skill_name + "," + competency;
+    public void getDescription(){
+        System.out.println("Skills \r\n" + skill_name + "," + competency + "\r\n" + skill_name + "," + competency + "\r\n" + skill_name + "," + competency);
     }
 }
 

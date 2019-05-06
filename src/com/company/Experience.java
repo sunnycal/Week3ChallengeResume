@@ -11,6 +11,14 @@ public class Experience {
     public Experience() {
     }
 
+    public Experience(String job_title, String company, String start_date, String end_date, String job_description) {
+        this.job_title = job_title;
+        this.company = company;
+        this.start_date = start_date;
+        this.end_date = end_date;
+        this.job_description = job_description;
+    }
+
     public String getCompany() {
         return company;
     }
@@ -51,10 +59,9 @@ public class Experience {
         this.job_description = job_description;
     }
 
-    public String getDescription(){
-        return "Experience \r\n" +  job_title + "\r\n" + company + "," + start_date + end_date + "\r\n" + "-" + "Duty 1," + job_description;
+    public void getDescription() {
+        System.out.println("Experience \r\n" + job_title + "\r\n" + company + "," + start_date + end_date + "\r\n" + "-" + "Duty 1," + job_description);
 
     }
-
 }
 

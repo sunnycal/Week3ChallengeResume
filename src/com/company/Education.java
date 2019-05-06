@@ -2,13 +2,26 @@ package com.company;
 
 public class Education {
 
+
+
     private String degree_type;
     private String major;
     private String university_name;
-    private int graduation_year;
+    private String graduation_year;
+
 
     public Education() {
     }
+
+    public Education(String degree_type, String major, String university_name, String graduation_year) {
+        this.degree_type = degree_type;
+        this.major = major;
+        this.university_name = university_name;
+        this.graduation_year = graduation_year;
+    }
+
+
+
 
     public String getDegree() {
         return degree_type;
@@ -34,17 +47,18 @@ public class Education {
         this.university_name = university_name;
     }
 
-    public int getGraduation_year() {
+    public String getGraduation_year() {
         return graduation_year;
     }
 
-    public void setGraduation_year(int graduation_year) {
+    public void setGraduation_year(String graduation_year) {
         this.graduation_year = graduation_year;
     }
 
-    public String getDescription(){
+    public void getDescription(){
 
-        return "Education\r\n" + degree_type + "in" + major + ", \r\n" + university_name;
+        System.out.println("Education\r\n" + degree_type + "in" + major + ", \r\n" + university_name);
+
 
     }
 }
