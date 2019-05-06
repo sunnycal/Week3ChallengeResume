@@ -28,3 +28,4 @@ public class Skills {
         return "Skills \r\n" + skill_name + "," + competency + "\r\n" + skill_name + "," + competency + "\r\n" + skill_name + "," + competency;
     }
 }
+

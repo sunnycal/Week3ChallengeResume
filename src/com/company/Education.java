@@ -42,11 +42,10 @@ public class Education {
         this.graduation_year = graduation_year;
     }
 
-
     public String getDescription(){
 
         return "Education\r\n" + degree_type + "in" + major + ", \r\n" + university_name;
 
     }
-
 }
+

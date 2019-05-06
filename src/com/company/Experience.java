@@ -51,13 +51,10 @@ public class Experience {
         this.job_description = job_description;
     }
 
-
-
-
-
     public String getDescription(){
-      return "Experience \r\n" +  job_title + "\r\n" + company + "," + start_date + end_date + "\r\n" + "-" + "Duty 1," + job_description;
+        return "Experience \r\n" +  job_title + "\r\n" + company + "," + start_date + end_date + "\r\n" + "-" + "Duty 1," + job_description;
 
     }
 
 }
+
